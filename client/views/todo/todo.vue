@@ -1,8 +1,8 @@
 <template>
-  <section class="real-app">
+  <section :class="$style.realApp">
     <input
       type="text"
-      class="add-input"
+      :class="$style.addInput"
       autofocus="autofocus"
       placeholder="接下去要做什么？"
       @keyup.enter="addTodo"
@@ -68,7 +68,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus" scoped module>
 .real-app{
   width 600px
   margin 0 auto
@@ -95,5 +95,3 @@ export default {
   box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
 }
 </style>
-
-
