@@ -28,7 +28,7 @@ compiler.watch({},(err,stats) => {
 
   const bundlePath = path.join(webpackConfig.output.path,'vue-ssr-server-bundle.json')
   // 问题二：bundle 创建之后是用来干嘛的。答：bundle 是服务器输出的 JSON 文件，需要将 bundle 作为参数传给 createBundleRenderer
-  bundle = memoryFS.readFileSync(bundlePath,'utf-8')
+  bundle = JSON.parse(memoryFS.readFileSync(bundlePath,'utf-8'))
   console.log('new bundle is created')
 
 })
