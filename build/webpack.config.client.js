@@ -4,6 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const webpack = require('webpack')
 const baseConfig = require('./webpack.config.base.js')
 const webpackMerge = require('webpack-merge')
+const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
 
 const isDev = process.env.NODE_ENV === 'development'
 const defaultPlugins = [
@@ -12,7 +13,12 @@ const defaultPlugins = [
       NODE_ENV:isDev ? '"development"' : '"production"'
     }
   }),
-  new htmlWebpackPlugin()
+  new htmlWebpackPlugin(
+    {
+      template:path.join(__dirname,'template.html')
+    }
+  ),
+  new VueSSRClientPlugin()
 ]
 
 let config
@@ -23,7 +29,10 @@ const devServer = {
   overlay: {
     warnings: true,
     errors: true
-  }
+  },
+  historyApiFallback: {
+    index: '/public/index.html'
+  },
 }
 if(isDev) {
   config = webpackMerge(baseConfig,{
@@ -128,4 +137,9 @@ if(isDev) {
   })
 }
 
+config.resolve = {
+  alias: {
+    'model': path.join(__dirname, '../client/model/client-model.js')
+  }
+}
 module.exports = config
