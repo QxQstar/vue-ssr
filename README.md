@@ -12,10 +12,5 @@ npm i
 npm run dev
 ```
 
-在浏览器打开 http://localhost:8000/
+在浏览器打开 http://localhost:3333/
 
-## 生产环境打包
-
-```cli
-npm run build
-```

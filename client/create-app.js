@@ -6,6 +6,7 @@ import createRouter from './config/router'
 import createStore from './store/store'
 import Notification from './components/notification'
 import Tabs from './components/tabs'
+import './assets/styles/global.styl'
 
 Vue.use(Router)
 Vue.use(Vuex)

@@ -1,0 +1,14 @@
+{
+  "ignore": [
+    "node_modules/**/node_modules",
+    "client",
+    "dist",
+    "build/webpack.config.client.js",
+    ".eslintrc"
+  ],
+  "verbose": true,
+  "ext": "js ejs json",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}
