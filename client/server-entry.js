@@ -5,6 +5,7 @@ export default context => {
     const { app, router } = createApp()
     // 设置服务器端 router 的位置
     router.push(context.url)
+    context.meta = app.$meta()
     // 等到 router 将可能的异步组件和钩子函数解析完
     router.onReady(() => {
       const matchedComponents = router.getMatchedComponents()

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './app.vue'
 import Router from 'vue-router'
 import Vuex from 'vuex'
+import meta from 'vue-meta'
 import createRouter from './config/router'
 import createStore from './store/store'
 import Notification from './components/notification'
@@ -12,6 +13,7 @@ Vue.use(Router)
 Vue.use(Vuex)
 Vue.use(Notification)
 Vue.use(Tabs)
+Vue.use(meta)
 //
 // 导出一个工厂函数，用于创建新的
 // 应用程序、router 和 store 实例
