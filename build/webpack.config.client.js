@@ -82,7 +82,9 @@ if(isDev) {
       vendor:['vue']
     },
     output:{
-      filename:'[name].[chunkhash:8].js'
+      path:path.join(__dirname,'../public'),
+      filename:'[name].[chunkhash:8].js',
+      publicPath: '/public/'
     },
     module:{
       rules:[

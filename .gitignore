@@ -1,3 +1,4 @@
-dist
+public
+server-build
 node_modules
 .idea
